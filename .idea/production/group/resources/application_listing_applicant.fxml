@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jobmanager.controller.ApplicationListingController">
+    <children>
+        <BorderPane AnchorPane.TopAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+
+            <left>
+                <ListView fx:id="lstApplications" onMouseClicked="#listClicked" prefHeight="560.0" prefWidth="253.0" BorderPane.alignment="CENTER" />
+            </left>
+
+         <center>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+              <tabs>
+                <Tab text="Job Posting Information">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" />
+                      <fx:include fx:id="jobInformationApplicant" source="job_information_applicant.fxml" />
+                  </content>
+                </Tab>
+                <Tab text="Application Information">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="0.0" />
+                      <fx:include fx:id="applicationInformation" source="application_information.fxml" />
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </center>
+
+        </BorderPane>
+    </children>
+</AnchorPane>

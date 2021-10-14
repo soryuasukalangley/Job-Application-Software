@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jobmanager.controller.JobListingController">
+    <children>
+        <BorderPane AnchorPane.TopAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <top>
+                <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <Button fx:id="btnFilterPosting" mnemonicParsing="false" onAction="#filterPostingsByTag" text="Filter Job Postings" />
+                        <Button fx:id="btnResetFilter" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#resetFilter" text="Reset Filter" />
+                        <Button fx:id="btnCreateNewPosting" mnemonicParsing="false" onAction="#createNewPosting" text="Create New Posting" />
+                    </items>
+                </ToolBar>
+            </top>
+            <left>
+                <ListView fx:id="lstJobPostings" onMouseClicked="#listClicked" prefHeight="560.0" prefWidth="253.0" BorderPane.alignment="CENTER" />
+            </left>
+            <center>
+                <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+                    <content>
+                        <GridPane prefWidth="545.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="80.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Company" underline="true">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Position Name" underline="true" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Job Status" underline="true" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Number of References Required" underline="true" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Number of Positions Offered" underline="true" GridPane.rowIndex="4">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Posting Starts" underline="true" GridPane.rowIndex="5">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Posting Ends" underline="true" GridPane.rowIndex="6">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Reference Deadline" underline="true" GridPane.rowIndex="7">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Tags" underline="true" GridPane.rowIndex="8">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Description" underline="true" GridPane.rowIndex="9">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lblCompanyName" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                <TextField fx:id="txtPositionName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label fx:id="lblPositionStatus" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <TextField fx:id="txtNumRefRequired" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <TextField fx:id="txtNumPositionsOffered" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <DatePicker fx:id="dateBegin" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                <DatePicker fx:id="dateEnd" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                <DatePicker fx:id="dateReferences" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                <TextField fx:id="txtTags" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                <TextArea fx:id="txtDescription" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                <Button mnemonicParsing="false" onAction="#updateValuesFromFields" text="Save Changes" GridPane.rowIndex="10" />
+                                <Button mnemonicParsing="false" onAction="#populateFields" text="Reset Changes to Entry" GridPane.rowIndex="11" />
+                                <Button fx:id="btnViewInterviewRound" mnemonicParsing="false" onAction="#viewInterviewRounds" text="View Interview Rounds" GridPane.rowIndex="12" />
+                            </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </GridPane>
+                    </content>
+                </ScrollPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>

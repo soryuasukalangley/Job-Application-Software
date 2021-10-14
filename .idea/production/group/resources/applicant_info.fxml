@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="jobmanager.controller.ApplicantInfoController">
+    <children>
+        <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <top>
+                <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#searchByName" text="Search by Name" />
+                        <Button fx:id="btnFilterByPosting" mnemonicParsing="false" onAction="#filterByPosting" text="Filter by Job Posting" />
+                        <Button fx:id="btnShowAllApplicants" mnemonicParsing="false" onAction="#showAllApplicants" text="Show all Applicants" />
+                    </items>
+                </ToolBar>
+            </top>
+            <left>
+                <ListView fx:id="lstApplicants" onMouseClicked="#listClicked" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+            </left>
+            <center>
+                <ScrollPane fitToWidth="true" prefHeight="600.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+                    <content>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="Full Name" underline="true">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Username" underline="true" GridPane.rowIndex="1">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Phone Number" underline="true" GridPane.rowIndex="2">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Email Address" underline="true" GridPane.rowIndex="3">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Account Creation Date" underline="true" GridPane.rowIndex="4">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Applications" underline="true" GridPane.rowIndex="5">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lblLegalName" GridPane.columnIndex="1">
+                                    <font>
+                                        <Font size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label fx:id="lblUsername" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Label fx:id="lblPhoneNumber" text="" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Label fx:id="lblEmail" text="" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Label fx:id="lblCreationDate" text="" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Button fx:id="btnViewSelectedApplication" mnemonicParsing="false" onAction="#viewSelectedApplication" text="View Selected Application" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                <ListView fx:id="lstApplications" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                            </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                        </GridPane>
+                    </content>
+                </ScrollPane>
+            </center>
+        </BorderPane>
+    </children>
+</AnchorPane>
